@@ -23,15 +23,18 @@ import {
   SiNpm,
   SiVite,
   SiFigma,
+  SiNetlify,
+  SiVercel,
+  SiNamecheap,
+  SiCpanel,
 } from "react-icons/si";
-
 import { VscVscode } from "react-icons/vsc";
 
 // =====================================================
-//  ✏️  এই অংশটুকু নিজের মতো বদলাও
-//  (সব tech তোমার GitHub profile থেকে নেওয়া)
+// ✏️ এই অংশটুকু নিজের মতো বদলাও
+// (সব tech তোমার GitHub profile থেকে নেওয়া)
 // =====================================================
-const categories = ["All", "Frontend", "Backend", "Database", "Tools"];
+const categories = ["All", "Frontend", "Backend", "Database", "Tools", "Deployment"];
 
 const skills = [
   // Frontend
@@ -59,6 +62,11 @@ const skills = [
   { name: "npm", category: "Tools", icon: SiNpm, color: "#CB3837" },
   { name: "Vite", category: "Tools", icon: SiVite, color: "#646CFF" },
   { name: "Figma", category: "Tools", icon: SiFigma, color: "#F24E1E" },
+  // Deployment & Hosting
+  { name: "Netlify", category: "Deployment", icon: SiNetlify, color: "#00C7B7" },
+  { name: "Vercel", category: "Deployment", icon: SiVercel, adaptive: true },
+  { name: "Namecheap", category: "Deployment", icon: SiNamecheap, color: "#FF5C00" },
+  { name: "cPanel", category: "Deployment", icon: SiCpanel, color: "#FF6C2C" },
 ];
 
 // উপরের দুইটা বড় card (নাম দিয়ে skills থেকে icon তুলে আনে)
@@ -90,7 +98,7 @@ function SkillIcon({ skill, size = 22 }) {
   return (
     <Icon
       size={size}
-      className={skill.adaptive ? "text-slate-900 dark:text-white" : ""}
+      className={skill.adaptive ? "text-heading " : ""}
       style={skill.color ? { color: skill.color } : undefined}
     />
   );
@@ -99,7 +107,7 @@ function SkillIcon({ skill, size = 22 }) {
 function TechChip({ name }) {
   const skill = byName[name];
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm transition-colors duration-300 hover:border-emerald-500/40 dark:border-white/10 dark:bg-slate-900/70 dark:text-white/80">
+    <span className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-3 py-1.5 text-xs font-medium text-heading/80 shadow-sm transition-colors duration-300 hover:border-primary/40 ">
       {skill && <SkillIcon skill={skill} size={14} />}
       {name}
     </span>
@@ -121,31 +129,31 @@ export default function Skills() {
       className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8"
     >
       {/* Background glow */}
-      <div className="pointer-events-none absolute left-[-6%] top-[8%] h-72 w-72 rounded-full bg-emerald-500/10 blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-[4%] right-[-6%] h-80 w-80 rounded-full bg-cyan-500/10 blur-[130px]" />
+      <div className="pointer-events-none absolute left-[-6%] top-[8%] h-72 w-72 rounded-full bg-primary/10 blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-[4%] right-[-6%] h-80 w-80 rounded-full bg-secondary/10 blur-[130px]" />
 
       <div className="relative mx-auto w-full max-w-6xl">
         {/* ================= HEADER ================= */}
         <div className="mx-auto max-w-2xl text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/[0.08] px-3 py-1.5">
-            <FiLayers className="text-emerald-500" size={12} />
-            <span className="text-[10px] uppercase tracking-[2px] text-slate-600 dark:text-white/60">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/[0.08] px-3 py-1.5">
+            <FiLayers className="text-primary" size={12} />
+            <span className="text-[10px] uppercase tracking-[2px] text-paragraph ">
               Skills
             </span>
           </div>
 
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-heading sm:text-4xl">
             Tech I build with
-            <span className="text-emerald-500">.</span>
+            <span className="text-primary">.</span>
           </h2>
 
-          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-white/50">
+          <p className="mt-4 text-sm leading-7 text-paragraph ">
             A focused toolkit across{" "}
-            <span className="font-semibold text-slate-800 dark:text-white/80">
+            <span className="font-semibold text-heading ">
               Laravel
             </span>{" "}
             and the{" "}
-            <span className="font-semibold text-slate-800 dark:text-white/80">
+            <span className="font-semibold text-heading ">
               MERN stack
             </span>
             , chosen for shipping fast, maintainable products.
@@ -157,29 +165,29 @@ export default function Skills() {
           {stacks.map((stack) => (
             <div
               key={stack.id}
-              className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white/70 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-emerald-500/40 hover:shadow-[0_24px_60px_rgba(16,185,129,0.12)] dark:border-white/10 dark:bg-white/[0.035] sm:p-8"
+              className="group relative overflow-hidden rounded-3xl border border-line bg-card/70 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_24px_60px_color-mix(in_srgb,var(--primary)_12%,transparent)] sm:p-8"
             >
-              <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-emerald-500/10 blur-3xl transition-all duration-500 group-hover:bg-emerald-500/25" />
+              <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/10 blur-3xl transition-all duration-500 group-hover:bg-primary/25" />
 
               <div className="relative flex items-start justify-between">
                 <div>
-                  <span className="text-[10px] uppercase tracking-[2px] text-emerald-600 dark:text-emerald-400">
+                  <span className="text-[10px] uppercase tracking-[2px] text-primary ">
                     Core stack
                   </span>
-                  <h3 className="mt-2 text-xl font-bold text-slate-900 dark:text-white">
+                  <h3 className="mt-2 text-xl font-bold text-heading ">
                     {stack.title}
                   </h3>
                 </div>
-                <span className="text-4xl font-bold leading-none text-slate-200 dark:text-white/10">
+                <span className="text-4xl font-bold leading-none text-line ">
                   {stack.id}
                 </span>
               </div>
 
-              <p className="relative mt-3 text-sm leading-7 text-slate-600 dark:text-white/50">
+              <p className="relative mt-3 text-sm leading-7 text-paragraph ">
                 {stack.tagline}
               </p>
 
-              <div className="relative mt-6 h-px w-full bg-gradient-to-r from-emerald-500/50 via-emerald-500/10 to-transparent" />
+              <div className="relative mt-6 h-px w-full bg-gradient-to-r from-primary/50 via-primary/10 to-transparent" />
 
               <div className="relative mt-5 flex flex-wrap gap-2">
                 {stack.tech.map((name) => (
@@ -203,8 +211,8 @@ export default function Skills() {
                   rounded-xl border px-4 py-2 text-xs font-medium transition-all duration-300
                   ${
                     isActive
-                      ? "border-transparent bg-gradient-to-r from-emerald-500 to-cyan-500 text-white shadow-lg shadow-emerald-500/25"
-                      : "border-slate-200 bg-white/60 text-slate-600 hover:border-emerald-500/40 hover:text-emerald-600 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/60 dark:hover:text-white"
+                      ? "border-transparent bg-primary hover:bg-primary-hover text-on-primary shadow-lg shadow-primary/25"
+                      : "border-line bg-card/60 text-paragraph hover:border-primary/40 hover:text-primary-hover "
                   }
                 `}
               >
@@ -220,7 +228,7 @@ export default function Skills() {
           {visible.map((skill, i) => (
             <div
               key={`${active}-${skill.name}`}
-              className="skill-anim group relative overflow-hidden rounded-2xl border border-slate-200 bg-white/70 p-4 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/40 hover:shadow-[0_16px_40px_rgba(16,185,129,0.12)] dark:border-white/10 dark:bg-white/[0.03]"
+              className="skill-anim group relative overflow-hidden rounded-2xl border border-line bg-card/70 p-4 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_16px_40px_color-mix(in_srgb,var(--primary)_12%,transparent)] "
               style={{
                 animation: "skill-in 0.5s ease both",
                 animationDelay: `${i * 35}ms`,
@@ -231,7 +239,7 @@ export default function Skills() {
                 className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{
                   background: `radial-gradient(160px circle at 20% 0%, ${
-                    skill.color ?? "#10b981"
+                    skill.color ?? "#8b5cf6"
                   }26, transparent 70%)`,
                 }}
               />
@@ -239,7 +247,7 @@ export default function Skills() {
               <div className="relative flex items-center gap-3">
                 <div
                   className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 ${
-                    skill.adaptive ? "bg-slate-900/5 dark:bg-white/10" : ""
+                    skill.adaptive ? "bg-heading/10 " : ""
                   }`}
                   style={
                     skill.color
@@ -251,10 +259,10 @@ export default function Skills() {
                 </div>
 
                 <div className="min-w-0">
-                  <p className="truncate text-sm font-semibold text-slate-900 dark:text-white">
+                  <p className="truncate text-sm font-semibold text-heading ">
                     {skill.name}
                   </p>
-                  <p className="text-[10px] uppercase tracking-[1.5px] text-slate-500 dark:text-white/40">
+                  <p className="text-[10px] uppercase tracking-[1.5px] text-paragraph/80 ">
                     {skill.category}
                   </p>
                 </div>
@@ -264,12 +272,12 @@ export default function Skills() {
         </div>
 
         {/* ================= LEARNING / EXPLORING ================= */}
-        <div className="mt-14 rounded-3xl border border-emerald-500/20 bg-gradient-to-r from-emerald-500/[0.07] via-transparent to-cyan-500/[0.07] p-6 sm:p-8">
+        <div className="mt-14 rounded-3xl border border-primary/20 bg-gradient-to-r from-primary/[0.07] via-transparent to-secondary/[0.07] p-6 sm:p-8">
           <div className="grid gap-8 md:grid-cols-2">
             <div>
               <div className="mb-4 flex items-center gap-2">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.9)]" />
-                <span className="text-[10px] uppercase tracking-[2px] text-slate-600 dark:text-white/60">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary shadow-[0_0_10px_color-mix(in_srgb,var(--primary)_90%,transparent)]" />
+                <span className="text-[10px] uppercase tracking-[2px] text-paragraph ">
                   Currently learning
                 </span>
               </div>
@@ -282,8 +290,8 @@ export default function Skills() {
 
             <div>
               <div className="mb-4 flex items-center gap-2">
-                <FiCpu className="text-emerald-500" size={12} />
-                <span className="text-[10px] uppercase tracking-[2px] text-slate-600 dark:text-white/60">
+                <FiCpu className="text-primary" size={12} />
+                <span className="text-[10px] uppercase tracking-[2px] text-paragraph ">
                   Exploring
                 </span>
               </div>
@@ -291,9 +299,9 @@ export default function Skills() {
                 {exploring.map((name) => (
                   <span
                     key={name}
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm dark:border-white/10 dark:bg-slate-900/70 dark:text-white/80"
+                    className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-3 py-1.5 text-xs font-medium text-heading/80 shadow-sm "
                   >
-                    <FiCpu size={14} className="text-emerald-500" />
+                    <FiCpu size={14} className="text-primary" />
                     {name}
                   </span>
                 ))}

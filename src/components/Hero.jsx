@@ -23,7 +23,7 @@ import {
 } from "react-icons/si";
 
 // =====================================================
-//  ✏️  এই অংশটুকু নিজের মতো বদলাও
+// ✏️ এই অংশটুকু নিজের মতো বদলাও
 // =====================================================
 const profile = {
   name: "Your Name",
@@ -114,44 +114,44 @@ export default function Hero() {
     >
       {/* ---------- Background: dot grid + glow ---------- */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-70 dark:opacity-40 [background-image:radial-gradient(circle_at_1px_1px,rgba(100,116,139,0.28)_1px,transparent_0)] [background-size:28px_28px] [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_72%)]"
+        className="pointer-events-none absolute inset-0 opacity-70 dark:opacity-40 [background-image:radial-gradient(circle_at_1px_1px,color-mix(in_srgb,var(--paragraph)_28%,transparent)_1px,transparent_0)] [background-size:28px_28px] [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_72%)]"
       />
-      <div className="pointer-events-none absolute left-[2%] top-[12%] h-72 w-72 rounded-full bg-emerald-500/15 blur-[120px]" />
-      <div className="pointer-events-none absolute right-[4%] top-[22%] h-80 w-80 rounded-full bg-cyan-500/15 blur-[130px]" />
+      <div className="pointer-events-none absolute left-[2%] top-[12%] h-72 w-72 rounded-full bg-primary/15 blur-[120px]" />
+      <div className="pointer-events-none absolute right-[4%] top-[22%] h-80 w-80 rounded-full bg-secondary/15 blur-[130px]" />
 
       <div className="relative mx-auto w-full max-w-7xl">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* ================= LEFT : CONTENT ================= */}
           <div className="relative z-10 order-2 text-center lg:order-1 lg:text-left">
             {/* Status badge */}
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/[0.08] px-3 py-1.5">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.9)]" />
-              <span className="text-[10px] uppercase tracking-[2px] text-slate-600 dark:text-white/60">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/[0.08] px-3 py-1.5">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary shadow-[0_0_10px_color-mix(in_srgb,var(--primary)_90%,transparent)]" />
+              <span className="text-[10px] uppercase tracking-[2px] text-paragraph ">
                 Available for opportunities
               </span>
             </div>
 
-            <p className="mb-2 text-sm text-slate-500 dark:text-white/50">
+            <p className="mb-2 text-sm text-paragraph/80 ">
               Hello, I&apos;m
             </p>
 
-            <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl md:text-5xl xl:text-6xl">
+            <h1 className="text-3xl font-bold tracking-tight text-heading sm:text-4xl md:text-5xl xl:text-6xl">
               {profile.name}
-              <span className="text-emerald-500">.</span>
+              <span className="text-primary">.</span>
             </h1>
 
             {/* Typing text */}
             <div className="mt-4 min-h-[44px] text-xl font-semibold sm:text-2xl md:text-3xl">
-              <span className="text-slate-500 dark:text-white/60">
+              <span className="text-paragraph/80 ">
                 I&apos;m a{" "}
               </span>
-              <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 {text}
               </span>
-              <span className="ml-1 inline-block h-6 w-[2px] translate-y-1 animate-pulse bg-emerald-500 sm:h-7" />
+              <span className="ml-1 inline-block h-6 w-[2px] translate-y-1 animate-pulse bg-primary sm:h-7" />
             </div>
 
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-slate-600 dark:text-white/50 lg:mx-0">
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-paragraph lg:mx-0">
               {profile.description}
             </p>
 
@@ -159,7 +159,7 @@ export default function Hero() {
             <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
               <a
                 href="#projects"
-                className="group flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 px-5 py-3 text-xs font-semibold text-white shadow-lg shadow-emerald-500/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-emerald-500/40"
+                className="group flex items-center gap-2 rounded-xl bg-primary hover:bg-primary-hover px-5 py-3 text-xs font-semibold text-on-primary shadow-lg shadow-primary/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-primary/40"
               >
                 Explore Projects
                 <FiArrowUpRight
@@ -171,7 +171,7 @@ export default function Hero() {
               <a
                 href="/cv.pdf"
                 download
-                className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white/60 px-5 py-3 text-xs font-semibold text-slate-700 transition-all duration-300 hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:text-emerald-700 dark:border-white/10 dark:bg-white/[0.03] dark:text-white/70 dark:hover:text-white"
+                className="flex items-center gap-2 rounded-xl border border-line bg-card/60 px-5 py-3 text-xs font-semibold text-heading/80 transition-all duration-300 hover:border-primary/40 hover:bg-primary/10 hover:text-primary-hover "
               >
                 Download CV
                 <FiDownload size={14} />
@@ -179,19 +179,19 @@ export default function Hero() {
             </div>
 
             {/* Mini stack line */}
-            <div className="mt-7 flex items-center justify-center gap-4 text-[10px] text-slate-500 dark:text-white/40 lg:justify-start">
+            <div className="mt-7 flex items-center justify-center gap-4 text-[10px] text-paragraph/80 lg:justify-start">
               <span className="flex items-center gap-1.5">
-                <FiServer className="text-emerald-500" />
+                <FiServer className="text-primary" />
                 PHP / Laravel
               </span>
-              <span className="h-3 w-px bg-slate-300 dark:bg-white/10" />
+              <span className="h-3 w-px bg-line" />
               <span className="flex items-center gap-1.5">
-                <FiLayers className="text-emerald-500" />
+                <FiLayers className="text-primary" />
                 MERN
               </span>
-              <span className="h-3 w-px bg-slate-300 dark:bg-white/10" />
+              <span className="h-3 w-px bg-line" />
               <span className="flex items-center gap-1.5">
-                <FiCode className="text-emerald-500" />
+                <FiCode className="text-primary" />
                 Next.js
               </span>
             </div>
@@ -211,7 +211,7 @@ export default function Hero() {
               style={{ perspective: "1200px" }}
             >
               {/* Back glow (3D এর বাইরে, তাই blur ঠিক থাকে) */}
-              <div className="pointer-events-none absolute inset-[18%] rounded-full bg-emerald-500/25 blur-[70px] dark:bg-emerald-500/20" />
+              <div className="pointer-events-none absolute inset-[18%] rounded-full bg-primary/25 blur-[70px] " />
 
               {/* ---------- 3D scene ---------- */}
               <div
@@ -225,8 +225,8 @@ export default function Hero() {
                     className="orbit-anim relative h-full w-full"
                     style={{ animation: "float-y 6s ease-in-out infinite" }}
                   >
-                    <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-emerald-400 via-teal-400 to-cyan-500 opacity-80 blur-[2px]" />
-                    <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-white bg-slate-100 shadow-2xl shadow-emerald-500/30 dark:border-slate-900 dark:bg-slate-800">
+                    <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary to-secondary opacity-80 blur-[2px]" />
+                    <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-card bg-page shadow-2xl shadow-primary/30 ">
                       <Image
                         src={profile.image}
                         alt={profile.name}
@@ -249,14 +249,14 @@ export default function Hero() {
                 >
                   {/* Orbit path rings */}
                   <div
-                    className="absolute rounded-full border border-emerald-500/30"
+                    className="absolute rounded-full border border-primary/30"
                     style={{
                       width: "calc(var(--r) * 2)",
                       height: "calc(var(--r) * 2)",
                     }}
                   />
                   <div
-                    className="absolute rounded-full border border-dashed border-cyan-500/25"
+                    className="absolute rounded-full border border-dashed border-secondary/25"
                     style={{
                       width: "calc(var(--r) * 2.3)",
                       height: "calc(var(--r) * 2.3)",
@@ -294,11 +294,11 @@ export default function Hero() {
                             }}
                           >
                             <div className="absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2">
-                              <div className="flex items-center gap-2 whitespace-nowrap rounded-full border border-slate-200 bg-white/95 px-2.5 py-2 shadow-lg shadow-slate-900/10 dark:border-white/10 dark:bg-slate-900/90 dark:shadow-black/40 sm:px-3.5">
+                              <div className="flex items-center gap-2 whitespace-nowrap rounded-full border border-line bg-card/95 px-2.5 py-2 shadow-lg shadow-black/10 sm:px-3.5">
                                 <Icon
                                   className={`h-4 w-4 sm:h-[18px] sm:w-[18px] ${
                                     badge.adaptive
-                                      ? "text-slate-900 dark:text-white"
+                                      ? "text-heading "
                                       : ""
                                   }`}
                                   style={
@@ -307,7 +307,7 @@ export default function Hero() {
                                       : undefined
                                   }
                                 />
-                                <span className="hidden text-[11px] font-semibold text-slate-700 dark:text-white/80 sm:block">
+                                <span className="hidden text-[11px] font-semibold text-heading/80 sm:block">
                                   {badge.label}
                                 </span>
                               </div>
@@ -330,26 +330,26 @@ export default function Hero() {
             return (
               <div
                 key={item.label}
-                className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white/70 p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500/40 hover:shadow-[0_20px_50px_rgba(16,185,129,0.15)] dark:border-white/10 dark:bg-white/[0.035] dark:hover:bg-emerald-500/[0.06]"
+                className="group relative overflow-hidden rounded-2xl border border-line bg-card/70 p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_20px_50px_color-mix(in_srgb,var(--primary)_15%,transparent)] "
               >
-                <div className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-emerald-500/10 blur-2xl transition-all duration-500 group-hover:bg-emerald-500/25" />
+                <div className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-primary/10 blur-2xl transition-all duration-500 group-hover:bg-primary/25" />
 
                 <div className="relative flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
+                  <h3 className="text-2xl font-bold text-heading sm:text-3xl">
                     {item.value}
                   </h3>
-                  <div className="rounded-lg border border-emerald-500/10 bg-emerald-500/10 p-2 text-emerald-600 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110 dark:text-emerald-400">
+                  <div className="rounded-lg border border-primary/10 bg-primary/10 p-2 text-primary transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110 ">
                     <Icon size={16} />
                   </div>
                 </div>
 
-                <p className="mt-2 text-[10px] uppercase tracking-[1.5px] text-slate-500 dark:text-white/40">
+                <p className="mt-2 text-[10px] uppercase tracking-[1.5px] text-paragraph/80 ">
                   {item.label}
                 </p>
 
-                <div className="mt-4 h-px w-full bg-gradient-to-r from-emerald-500/50 via-emerald-500/10 to-transparent" />
+                <div className="mt-4 h-px w-full bg-gradient-to-r from-primary/50 via-primary/10 to-transparent" />
 
-                <span className="absolute bottom-3 right-4 text-[8px] text-slate-300 dark:text-white/10">
+                <span className="absolute bottom-3 right-4 text-[8px] text-paragraph/40 ">
                   0{index + 1}
                 </span>
               </div>

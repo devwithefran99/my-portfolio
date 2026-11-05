@@ -1,18 +1,72 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =====================================================
+   THEME COLORS
+   রঙ বদলাতে চাইলে শুধু এই দুইটা block এ hex বদলালেই
+   পুরো website এর color বদলে যাবে।
+   ===================================================== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f5f3ff;
+  --card: #ffffff;
+  --primary: #7c3aed;
+  --secondary: #6d28d9;
+  --heading: #1e1b2e;
+  --paragraph: #6b6680;
+  --border: #ddd6fe;
+  --hover: #6d28d9;
+  --on-primary: #ffffff; /* primary button এর উপরের লেখা */
+  color-scheme: light;
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
+.dark {
+  --bg: #181326;
+  --card: #211b33;
+  --primary: #a78bfa;
+  --secondary: #8b5cf6;
+  --heading: #f5f3ff;
+  --paragraph: #b8aecf;
+  --border: #382d50;
+  --hover: #c4b5fd;
+  --on-primary: #181326;
+  color-scheme: dark;
+}
+
+/* Tailwind এ utility হিসেবে ব্যবহার করার জন্য:
+   bg-page, bg-card, text-primary, text-heading, text-paragraph,
+   border-line, from-primary, to-secondary, hover:text-primary-hover ... */
+@theme inline {
+  --color-page: var(--bg);
+  --color-card: var(--card);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--hover);
+  --color-secondary: var(--secondary);
+  --color-heading: var(--heading);
+  --color-paragraph: var(--paragraph);
+  --color-line: var(--border);
+  --color-on-primary: var(--on-primary);
+}
 
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  background-color: var(--bg);
+  color: var(--paragraph);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--primary) 30%, transparent);
+}
+
 section {
   scroll-margin-top: 80px;
 }
+
+/* ---------- Animations ---------- */
 @keyframes orbit-spin {
   to { transform: rotateZ(360deg); }
 }
@@ -24,12 +78,10 @@ section {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
-@media (prefers-reduced-motion: reduce) {
- 
-   .orbit-anim, .skill-anim { animation: none !important; }
-}
-
 @keyframes skill-in {
   from { opacity: 0; transform: translateY(14px) scale(0.97); }
   to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit-anim, .skill-anim { animation: none !important; }
 }
