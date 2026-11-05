@@ -5,22 +5,31 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 80px;
+}
+@keyframes orbit-spin {
+  to { transform: rotateZ(360deg); }
+}
+@keyframes orbit-counter {
+  from { transform: rotateZ(calc(var(--a) * -1)) rotateX(calc(var(--tilt) * -1)); }
+  to   { transform: rotateZ(calc(var(--a) * -1 - 360deg)) rotateX(calc(var(--tilt) * -1)); }
+}
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@media (prefers-reduced-motion: reduce) {
+ 
+   .orbit-anim, .skill-anim { animation: none !important; }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes skill-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
 }
