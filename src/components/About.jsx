@@ -19,14 +19,12 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 
-// =====================================================
-// ✏️ এই অংশটুকু নিজের মতো বদলাও
-// =====================================================
+
 const profile = {
-  name: "Your Name",
+  name: "Erfan Hossen",
   role: "Full Stack Web Developer",
   location: "Chattogram, Bangladesh",
-  image: "/Image/About-me.png", // public/Image folder এ নিজের ছবি রাখো
+  image: "/Image/About-me.png",
 };
 
 const quickFacts = [
