@@ -93,3 +93,91 @@ section {
 @media (prefers-reduced-motion: reduce) {
   .orbit-anim, .skill-anim, .toast-anim { animation: none !important; }
 }
+
+/* ---------- Preloader ---------- */
+html.preloader-lock,
+html.preloader-lock body {
+  overflow: hidden;
+}
+
+/* Failsafe: never trap a visitor if JavaScript fails to load. */
+#preloader {
+  animation: preloader-failsafe 0s linear 9s forwards;
+}
+
+.preloader-grid {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--primary) 14%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--primary) 14%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 56px 56px;
+  opacity: 0.55;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 0%, transparent 72%);
+  mask-image: radial-gradient(ellipse at center, #000 0%, transparent 72%);
+}
+
+@keyframes preloader-failsafe {
+  to {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+@keyframes preloader-logo-in {
+  from { opacity: 0; transform: translateY(115%); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes preloader-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes preloader-drift-a {
+  from { transform: translate3d(-4%, -3%, 0) scale(1); }
+  to   { transform: translate3d(5%, 4%, 0) scale(1.12); }
+}
+@keyframes preloader-drift-b {
+  from { transform: translate3d(4%, 3%, 0) scale(1.1); }
+  to   { transform: translate3d(-5%, -4%, 0) scale(1); }
+}
+@keyframes preloader-sweep {
+  0%       { transform: translateX(-150%); }
+  60%, 100% { transform: translateX(400%); }
+}
+@keyframes preloader-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.4); }
+}
+
+.preloader-logo { animation: preloader-logo-in 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both; }
+.preloader-fade { animation: preloader-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both; }
+.preloader-fade-late { animation: preloader-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both; }
+.preloader-drift-a { animation: preloader-drift-a 14s ease-in-out infinite alternate; }
+.preloader-drift-b { animation: preloader-drift-b 18s ease-in-out infinite alternate; }
+.preloader-sweep { animation: preloader-sweep 2.2s ease-in-out infinite; }
+.preloader-dot { animation: preloader-pulse 1.6s ease-in-out infinite; }
+
+@media (min-width: 640px) {
+  .preloader-grid { background-size: 72px 72px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader-logo,
+  .preloader-fade,
+  .preloader-fade-late,
+  .preloader-drift-a,
+  .preloader-drift-b,
+  .preloader-sweep,
+  .preloader-dot {
+    animation: none !important;
+  }
+  #preloader {
+    animation: none !important;
+    transition: none !important;
+  }
+}
