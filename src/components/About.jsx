@@ -26,7 +26,7 @@ const profile = {
   name: "Your Name",
   role: "Full Stack Web Developer",
   location: "Chattogram, Bangladesh",
-  image: "/profile.png", // Hero তে যে ছবি দিয়েছো সেটাই
+  image: "/Image/About-me.png", // public/Image folder এ নিজের ছবি রাখো
 };
 
 const quickFacts = [

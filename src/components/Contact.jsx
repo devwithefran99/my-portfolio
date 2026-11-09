@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   FiMail,
   FiMapPin,
@@ -9,6 +9,7 @@ import {
   FiCheckCircle,
   FiAlertCircle,
   FiLoader,
+  FiX,
 } from "react-icons/fi";
 import {
   FaGithub,
@@ -51,6 +52,49 @@ const cardBase =
 
 const inputCls =
   "w-full rounded-xl border border-line bg-card/70 px-4 py-3 text-sm text-heading outline-none transition-all duration-300 placeholder:text-paragraph/60 focus:border-primary/60 focus:ring-4 focus:ring-primary/10 ";
+
+// সফল / ব্যর্থ হলে উপরে ডানদিকে যে toast আসে
+function Toast({ toast, onClose }) {
+  if (!toast) return null;
+  const ok = toast.type === "success";
+  const Icon = ok ? FiCheckCircle : FiAlertCircle;
+
+  return (
+    <div
+      role={ok ? "status" : "alert"}
+      aria-live={ok ? "polite" : "assertive"}
+      className="toast-anim fixed right-4 top-20 z-[100] w-[calc(100%-2rem)] max-w-sm sm:right-6"
+    >
+      <div
+        className={`flex items-start gap-3 rounded-2xl border bg-card p-4 shadow-2xl backdrop-blur-xl ${
+          ok ? "border-primary/40 shadow-primary/20" : "border-red-500/40 shadow-red-500/10"
+        }`}
+      >
+        <div
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${
+            ok ? "bg-primary/10 text-primary" : "bg-red-500/10 text-red-500"
+          }`}
+        >
+          <Icon size={18} />
+        </div>
+
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-semibold text-heading">{toast.title}</p>
+          <p className="mt-0.5 text-xs leading-5 text-paragraph">{toast.message}</p>
+        </div>
+
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close notification"
+          className="shrink-0 rounded-lg p-1 text-paragraph/60 transition-colors hover:text-heading"
+        >
+          <FiX size={14} />
+        </button>
+      </div>
+    </div>
+  );
+}
 
 function Field({ label, htmlFor, children }) {
   return (
@@ -108,6 +152,14 @@ function InfoCard({ icon: Icon, label, value, href }) {
 export default function Contact() {
   // idle | sending | success | error
   const [status, setStatus] = useState("idle");
+  const [toast, setToast] = useState(null);
+
+  // toast ৫ সেকেন্ড পর নিজে সরে যাবে
+  useEffect(() => {
+    if (!toast) return;
+    const t = setTimeout(() => setToast(null), 5000);
+    return () => clearTimeout(t);
+  }, [toast]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -143,15 +195,27 @@ export default function Contact() {
       if (json.success) {
         setStatus("success");
         form.reset();
+        setToast({
+          type: "success",
+          title: "Message sent!",
+          message: "Thanks for reaching out. I'll reply to you soon.",
+        });
       } else {
-        setStatus("error");
+        throw new Error(json.message || "failed");
       }
     } catch {
       setStatus("error");
+      setToast({
+        type: "error",
+        title: "Couldn't send message",
+        message: `Please try again or email me at ${contact.email}.`,
+      });
     }
   }
 
   return (
+    <>
+    <Toast toast={toast} onClose={() => setToast(null)} />
     <section
       id="contact"
       className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8"
@@ -337,39 +401,12 @@ export default function Contact() {
                     </>
                   )}
                 </button>
-
-                {/* Status messages */}
-                <div aria-live="polite">
-                  {status === "success" && (
-                    <div className="flex items-start gap-2.5 rounded-xl border border-primary/30 bg-primary/10 p-3.5 text-xs text-primary ">
-                      <FiCheckCircle size={15} className="mt-0.5 shrink-0" />
-                      Thanks for reaching out! Your message has been sent and
-                      I&apos;ll reply soon.
-                    </div>
-                  )}
-
-                  {status === "error" && (
-                    <div className="flex items-start gap-2.5 rounded-xl border border-red-500/30 bg-red-500/10 p-3.5 text-xs text-red-700 ">
-                      <FiAlertCircle size={15} className="mt-0.5 shrink-0" />
-                      <span>
-                        Something went wrong. Please try again, or email me
-                        directly at{" "}
-                        <a
-                          href={`mailto:${contact.email}`}
-                          className="font-semibold underline"
-                        >
-                          {contact.email}
-                        </a>
-                        .
-                      </span>
-                    </div>
-                  )}
-                </div>
               </form>
             </div>
           </div>
         </div>
       </div>
     </section>
+    </>
   );
 }

@@ -1,0 +1,8 @@
+# Keep source files LF. CRLF inside JSX className template literals causes
+# Next.js/Turbopack server-client hydration mismatches.
+*.js text eol=lf
+*.jsx text eol=lf
+*.mjs text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+*.md text eol=lf

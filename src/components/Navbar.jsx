@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useTheme } from "next-themes";
 import { FiMenu, FiX, FiDownload, FiSun, FiMoon } from "react-icons/fi";
 
@@ -87,22 +88,17 @@ export default function Navbar() {
           "
         >
           <div className="mx-auto flex h-[68px] w-full max-w-7xl items-center px-3 sm:px-5">
-            {/* Logo (এখানে পরে নিজের logo image বসাতে পারো) */}
+            {/* Logo */}
             <div className="flex flex-1 items-center">
-              <a href="#home" className="flex items-center gap-2">
-                <span
-                  className="
-                    flex h-9 w-9 items-center justify-center rounded-lg
-                    bg-gradient-to-br from-primary to-secondary
-                    text-sm font-bold text-on-primary
-                    shadow-lg shadow-primary/20
-                  "
-                >
-                  {"</>"}
-                </span>
-                <span className="text-base font-bold tracking-tight text-heading ">
-                  YourName<span className="text-primary">.dev</span>
-                </span>
+              <a href="#home" className="flex items-center">
+                <Image
+                  src="/Image/erfan-shawon-logo.png"
+                  alt="Erfan Shawon"
+                  width={1600}
+                  height={691}
+                  priority
+                  className="h-10 w-auto sm:h-11"
+                />
               </a>
             </div>
 
@@ -214,14 +210,15 @@ export default function Navbar() {
             <a
               href="#home"
               onClick={() => setIsOpen(false)}
-              className="flex items-center gap-2"
+              className="flex items-center"
             >
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-sm font-bold text-on-primary">
-                {"</>"}
-              </span>
-              <span className="text-base font-bold text-heading ">
-                YourName<span className="text-primary">.dev</span>
-              </span>
+              <Image
+                src="/Image/erfan-shawon-logo.png"
+                alt="Erfan Shawon"
+                width={1600}
+                height={691}
+                className="h-10 w-auto"
+              />
             </a>
 
             <div className="flex items-center gap-2">

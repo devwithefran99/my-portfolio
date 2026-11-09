@@ -26,7 +26,7 @@ import {
 // ✏️ এই অংশটুকু নিজের মতো বদলাও
 // =====================================================
 const profile = {
-  name: "Your Name",
+  name: "Erfan Hossen Shawon",
   roles: [
     "Full Stack Developer",
     "Laravel Developer",
@@ -35,13 +35,13 @@ const profile = {
   ],
   description:
     "I build fast, scalable web applications with Laravel and the MERN stack, from database design and APIs to polished, responsive interfaces.",
-  image: "/profile.png", // public/ folder এ নিজের ছবি রাখো
+  image: "/Image/Hero-Image.png", // public/Image folder এ নিজের ছবি রাখো
 };
 
 const stats = [
-  { value: "5+", label: "Projects", icon: FiCode },
+  { value: "6+", label: "Projects", icon: FiCode },
   { value: "2", label: "Core Stacks", icon: FiLayers },
-  { value: "15+", label: "Technologies", icon: FiCpu },
+  { value: "25+", label: "Technologies", icon: FiCpu },
   { value: "100%", label: "Dedication", icon: FiActivity },
 ];
 

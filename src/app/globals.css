@@ -85,3 +85,11 @@ section {
 @media (prefers-reduced-motion: reduce) {
   .orbit-anim, .skill-anim { animation: none !important; }
 }
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: none; }
+}
+.toast-anim { animation: toast-in 0.35s ease both; }
+@media (prefers-reduced-motion: reduce) {
+  .orbit-anim, .skill-anim, .toast-anim { animation: none !important; }
+}

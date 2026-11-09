@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   FiMail,
   FiMapPin,
@@ -11,11 +12,8 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-// =====================================================
-// ✏️ এই অংশটুকু নিজের মতো বদলাও
-// =====================================================
 const brand = {
-  name: "YourName", // Navbar এর নামের সাথে মিলিয়ে নাও
+  name: "Erfan Hosen", 
   tagline:
     "Full stack web developer building fast, scalable web applications and e-commerce systems with Laravel and the MERN stack.",
 };
@@ -84,14 +82,14 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.3fr]">
           {/* ---------- Brand ---------- */}
           <div>
-            <a href="#home" className="inline-flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-sm font-bold text-on-primary shadow-lg shadow-primary/20">
-                {"</>"}
-              </span>
-              <span className="text-base font-bold tracking-tight text-heading ">
-                {brand.name}
-                <span className="text-primary">.dev</span>
-              </span>
+            <a href="#home" className="inline-flex items-center">
+              <Image
+                src="/Image/erfan-shawon-logo.png"
+                alt="Erfan Shawon"
+                width={1600}
+                height={691}
+                className="h-12 w-auto"
+              />
             </a>
 
             <p className="mt-4 max-w-xs text-sm leading-7 text-paragraph ">
