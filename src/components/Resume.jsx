@@ -6,10 +6,6 @@ import {
   FiDownload,
 } from "react-icons/fi";
 
-// =====================================================
-// ✏️ এই অংশটুকু নিজের মতো বদলাও
-// planned: true দিলে dashed marker আসে (ভবিষ্যতের plan এর জন্য)
-// =====================================================
 const experience = [
   {
     icon: FiBriefcase,

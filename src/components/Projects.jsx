@@ -12,9 +12,7 @@ import {
   SiNodedotjs,
 } from "react-icons/si";
 
-// =====================================================
-// ✏️ এই অংশটুকু নিজের মতো বদলাও
-// =====================================================
+
 const GITHUB_URL = "https://github.com/devwithefran99";
 
 const categories = ["All", "Laravel", "React", "Next.js"];
@@ -29,8 +27,7 @@ const techIcons = {
   "Node.js": { icon: SiNodedotjs, color: "#5FA04E" },
 };
 
-// image: নিজের screenshot দিতে চাইলে public/projects/ এ রেখে "/projects/name.png" লেখো।
-// না দিলে live site এর thumbnail নিজে থেকে আসবে।
+
 const projects = [
   {
     id: "01",

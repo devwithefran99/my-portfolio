@@ -18,9 +18,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-// =====================================================
-// ✏️ এই অংশটুকু নিজের মতো বদলাও
-// =====================================================
+
 const contact = {
   email: "devwithefran99@gmail.com",
   whatsapp: "8801782717567", // country code সহ, + ছাড়া
@@ -42,10 +40,9 @@ const socials = [
   },
 ];
 
-// Form পাঠানোর জন্য Web3Forms এর free access key (.env.local এ NEXT_PUBLIC_WEB3FORMS_KEY)
-// key না থাকলে form নিজে থেকে email app (mailto) খুলে দেবে।
+
 const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
-// =====================================================
+
 
 const cardBase =
   "relative overflow-hidden rounded-3xl border border-line bg-card/70 backdrop-blur-xl ";

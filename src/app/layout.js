@@ -2,6 +2,7 @@ import { Syne } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import BottomNav from "../components/BottomNav";
 import ThemeProvider from "./../components/ThemeProvider";
 
 const syne = Syne({
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           {children}
           <Footer />
+          <BottomNav />
         </ThemeProvider>
       </body>
     </html>

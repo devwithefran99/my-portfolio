@@ -22,9 +22,7 @@ import {
   SiNextdotjs,
 } from "react-icons/si";
 
-// =====================================================
-// ✏️ এই অংশটুকু নিজের মতো বদলাও
-// =====================================================
+
 const profile = {
   name: "Erfan Hossen Shawon",
   roles: [
@@ -35,7 +33,7 @@ const profile = {
   ],
   description:
     "I build fast, scalable web applications with Laravel and the MERN stack, from database design and APIs to polished, responsive interfaces.",
-  image: "/Image/Hero-Image.png", // public/Image folder এ নিজের ছবি রাখো
+  image: "/Image/Hero-Image.png", 
 };
 
 const stats = [
@@ -45,7 +43,7 @@ const stats = [
   { value: "100%", label: "Dedication", icon: FiActivity },
 ];
 
-// Orbit এ যে badge গুলো ঘুরবে (angle নিজে নিজেই সমান ভাগ হবে)
+
 const orbitBadges = [
   { icon: SiLaravel, label: "Laravel", color: "#FF2D20" },
   { icon: SiPhp, label: "PHP", color: "#777BB4" },
