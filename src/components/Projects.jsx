@@ -89,7 +89,7 @@ const projects = [
     title: "DevStack",
     category: "React",
     url: "https://dev-stack-by-react.netlify.app",
-    // ✏️ এই description টা placeholder, নিজের মতো লিখে নাও
+    
     description:
       "A React project built with a component-based architecture and a clean, responsive interface.",
     features: ["Component-based", "Responsive"],
@@ -97,9 +97,7 @@ const projects = [
     image: null,
   },
 ];
-// =====================================================
 
-// Live site এর screenshot (WordPress mShots), screenshot না দিলে এটা কাজ করবে
 const thumbFor = (url) =>
   `https://s0.wp.com/mshots/v1/${encodeURIComponent(url)}?w=1200&h=750`;
 

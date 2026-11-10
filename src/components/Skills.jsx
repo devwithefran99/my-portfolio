@@ -30,10 +30,7 @@ import {
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
-// =====================================================
-// ✏️ এই অংশটুকু নিজের মতো বদলাও
-// (সব tech তোমার GitHub profile থেকে নেওয়া)
-// =====================================================
+
 const categories = ["All", "Frontend", "Backend", "Database", "Tools", "Deployment"];
 
 const skills = [
@@ -47,6 +44,7 @@ const skills = [
   { name: "Tailwind CSS", category: "Frontend", icon: SiTailwindcss, color: "#06B6D4" },
   { name: "Bootstrap", category: "Frontend", icon: SiBootstrap, color: "#7952B3" },
   { name: "jQuery", category: "Frontend", icon: SiJquery, color: "#0769AD" },
+  { name : "Ajax", category: "Frontend", icon: SiJquery, color: "#0769AD" },
   // Backend
   { name: "PHP", category: "Backend", icon: SiPhp, color: "#777BB4" },
   { name: "Laravel", category: "Backend", icon: SiLaravel, color: "#FF2D20" },

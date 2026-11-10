@@ -6,9 +6,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-// =====================================================
-//  ✏️  এই অংশটুকু নিজের মতো বদলাও
-// =====================================================
+
 const whatsapp = {
   number: "8801782717567", // country code সহ, + ছাড়া
   message: "Hi, I found you through your portfolio.",

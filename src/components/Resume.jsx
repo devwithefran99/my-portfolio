@@ -50,7 +50,7 @@ const education = [
   {
     icon: FiBookOpen,
     title: "Diploma in Computer Science",
-    org: "Your Institute", // ✏️ নিজের institute এর নাম লেখো
+    org: "Bangladesh Sweden Polytechnic Institute", 
     badge: "Completed",
     description:
       "Built a solid foundation in computer science and programming fundamentals.",

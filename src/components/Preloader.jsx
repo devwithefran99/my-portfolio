@@ -61,7 +61,7 @@ export default function Preloader() {
     };
 
     const tick = (now) => {
-      const t = Math.min((now - start) / DURATION, 1);
+      const t = Math.min(Math.max((now - start) / DURATION, 0), 1);
       const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
       setProgress(eased * 100);
 
@@ -82,7 +82,6 @@ export default function Preloader() {
   if (hidden) return null;
 
   const value = Math.round(progress);
-  const display = String(value).padStart(3, "0");
 
   return (
     <div
@@ -124,7 +123,7 @@ export default function Preloader() {
             width={1600}
             height={691}
             priority
-            className="preloader-logo h-9 w-auto sm:h-11 md:h-12"
+            className="preloader-logo h-10 w-auto sm:h-12 md:h-14"
           />
         </div>
 
@@ -137,8 +136,8 @@ export default function Preloader() {
             <span className="text-[9px] uppercase tracking-[0.28em] text-paragraph/55 sm:text-[10px]">
               {statusFor(value)}
             </span>
-            <span className="text-xs font-medium tabular-nums tracking-[0.15em] text-heading sm:text-sm">
-              {display}
+            <span className="inline-block min-w-[3.5ch] text-right text-xs font-medium tabular-nums tracking-[0.12em] text-heading sm:text-sm">
+              {value}
               <span className="text-paragraph/40">%</span>
             </span>
           </div>
