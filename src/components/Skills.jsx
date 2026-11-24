@@ -12,6 +12,7 @@ import {
   SiTailwindcss,
   SiBootstrap,
   SiJquery,
+  SiAjax,
   SiPhp,
   SiLaravel,
   SiNodedotjs,
