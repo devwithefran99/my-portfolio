@@ -16,23 +16,23 @@ import {
   SiPhp,
   SiMysql,
   SiMongodb,
-  SiExpress,
   SiReact,
   SiNodedotjs,
-  SiNextdotjs,
+  SiClaude,
+  SiGoogleanalytics,
 } from "react-icons/si";
+import { RiOpenaiFill } from "react-icons/ri";
 
 
 const profile = {
   name: "Erfan Hossen Shawon",
   roles: [
     "Full Stack Developer",
-    "Laravel Developer",
-    "MERN Stack Developer",
-    "Next.js Developer",
+    "Social Media Manager",
+    "AI Specialist",
   ],
   description:
-    "I build fast, scalable web applications with Laravel and the MERN stack, from database design and APIs to polished, responsive interfaces.",
+    "I build fast, scalable web applications with Laravel and the MERN stack, grow brands through social media, and put AI to work to ship faster and smarter.",
   image: "/Image/Hero-Image.png", 
 };
 
@@ -45,14 +45,15 @@ const stats = [
 
 
 const orbitBadges = [
-  { icon: SiLaravel, label: "Laravel", color: "#FF2D20" },
   { icon: SiPhp, label: "PHP", color: "#777BB4" },
-  { icon: SiMysql, label: "MySQL", color: "#4479A1" },
-  { icon: SiMongodb, label: "MongoDB", color: "#47A248" },
-  { icon: SiExpress, label: "Express", adaptive: true },
+  { icon: SiLaravel, label: "Laravel", color: "#FF2D20" },
   { icon: SiReact, label: "React", color: "#61DAFB" },
+  { icon: SiMongodb, label: "MongoDB", color: "#47A248" },
   { icon: SiNodedotjs, label: "Node.js", color: "#5FA04E" },
-  { icon: SiNextdotjs, label: "Next.js", adaptive: true },
+  { icon: SiMysql, label: "MySQL", color: "#4479A1" },
+  { icon: SiClaude, label: "Claude", color: "#D97757" },
+  { icon: RiOpenaiFill, label: "ChatGPT", adaptive: true },
+  { icon: SiGoogleanalytics, label: "GA4", color: "#E37400" },
 ];
 // =====================================================
 

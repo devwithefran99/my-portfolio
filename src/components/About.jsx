@@ -54,7 +54,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8"
+      className="relative overflow-hidden px-4 sm:px-6 lg:px-8"
     >
       {/* Ambient glows */}
       <div className="pointer-events-none absolute left-[-6%] top-[18%] h-72 w-72 rounded-full bg-primary/10 blur-[120px]" />
